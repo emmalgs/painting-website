@@ -91,7 +91,44 @@ ul li:hover ul.dropdown {
     position: relative;
 }
 
+.slideshow > ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
 .slide {
     position: absolute;
     inset: 0;
+    opacity: 0;
+}
+
+.slide > img {
+    object-position: center;
+}
+
+.slide[data-active] {
+    opacity: 1;
+}
+
+.slideshow-btn {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.slideshow-btn:hover,
+.slideshow-btn:focus {
+    color:blue;
+}
+
+.slideshow-btn.prev {
+    left: 1rem;
+}
+
+.slideshow-btn.next {
+    right: 1rem;
 }
