@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 2em;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    height: 100vh;
+}
+
+/* sidebar and nav */
+.sidebar {
+    margin: 1rem;
+    grid-area: 1 / 1 / 6 / 2;
+    position: fixed;
+    border-right: 2px solid #ef4444;
+}
+
+.home {
+    font-size: 5em;
+    padding: 1rem;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+ul ul {
+    padding-left: 1rem;
+}
+
+li {
+    padding: .5rem;
+}
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+ul li ul.dropdown {
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+/* main area */
+.main {
+    grid-area: 2 / 3 / 4 / 6;
+}
+
+.year-img {
+    height: 5rem;
+    width: auto;
+}
+
+
