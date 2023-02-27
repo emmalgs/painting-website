@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: red;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 2em;
@@ -11,7 +17,6 @@ body {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    height: 100vh;
 }
 
 /* sidebar and nav */
@@ -54,9 +59,24 @@ ul li:hover ul.dropdown {
     display: block;
 }
 
-/* main area */
+/* homepage main area */
 .main {
     grid-area: 2 / 3 / 4 / 6;
+}
+
+.main-img {
+    display: block;
+    height: 50vh;
+    width: auto;
+}
+
+/* painting main area */
+.main-container {
+    grid-area: 1 / 3 / 6 / 6;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .year-img {
@@ -64,4 +84,14 @@ ul li:hover ul.dropdown {
     width: auto;
 }
 
+/* slideshow */
+.slideshow {
+    height: 60vh;
+    width: auto;
+    position: relative;
+}
 
+.slide {
+    position: absolute;
+    inset: 0;
+}
