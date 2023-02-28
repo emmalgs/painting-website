@@ -3,7 +3,6 @@ const Y2021 = "../paintings/2021"
 const Y2020 = "../paintings/2020"
 const buttons = document.querySelectorAll('[data-slideshow-button')
 
-
 function displayPaintings2022() {
     const paintingMain = document.querySelector(".painting-main")
     const year = document.createElement('div')
@@ -32,8 +31,6 @@ function slider2022() {
     const image = document.createElement('img')
     image.src = Y2022 + `/${i}.jpg`
     image.classList.add(`img${i}`)
-    image.style.width = `auto`
-    image.style.height = `50vh`
     imagelist.append(image)
     }
 }
