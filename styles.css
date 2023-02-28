@@ -89,28 +89,26 @@ ul li:hover ul.dropdown {
 /* slideshow */
 
 .slideshow {
-    height: 60vh;
+    height: 70vh;
     width: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
 }
 
-.slideshow > [data-slides] {
-    list-style: none;
-    position: absolute;
-    grid-area: 1 / 2 / 2 / 3;
+.slides {
+    height: 60vh;
+    position: relative;
 }
 
 .slide {
     opacity: 0;
-    width: 70vw;
     position: absolute;
 }
 
 .slide > img {
     height: 50vh;
     width: auto;
+
 }
 
 .slide[data-active] {
