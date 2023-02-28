@@ -24,14 +24,14 @@ function slider2022() {
     const slider = document.querySelector('[data-slides]')
 
     for (let i = 1; i < 14; i++) {
-    const imagelist = document.createElement('div')
-    imagelist.classList.add('slide')
-    slider.append(imagelist)
+    // const imagelist = document.createElement('div')
+    // imagelist.classList.add('slide')
+    // slider.append(imagelist)
 
     const image = document.createElement('img')
     image.src = Y2022 + `/${i}.jpg`
-    image.classList.add(`img${i}`)
-    imagelist.append(image)
+    image.classList.add(`slide`)
+    slider.append(image)
     }
 }
 slider2022()
@@ -39,7 +39,7 @@ slider2022()
 
 
 // slideshow functionality
-let activeSlide = document.querySelector('[data-slides').firstElementChild
+let activeSlide = document.querySelector('[data-slides]').firstElementChild
 activeSlide.setAttribute('data-active', '')
 
 buttons.forEach(button => {

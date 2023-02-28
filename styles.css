@@ -72,7 +72,7 @@ ul li:hover ul.dropdown {
 
 /* painting main area */
 .main-container {
-    grid-area: 1 / 3 / 6 / 6;
+    grid-area: 1 / 2 / 6 / 6;
 
     display: flex;
     flex-direction: column;
@@ -98,18 +98,20 @@ ul li:hover ul.dropdown {
 .slides {
     height: 60vh;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slide {
     opacity: 0;
     position: absolute;
+    height: 60vh;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
 }
 
-.slide > img {
-    height: 50vh;
-    width: auto;
-
-}
 
 .slide[data-active] {
     opacity: 1;
