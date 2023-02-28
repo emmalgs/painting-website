@@ -24,7 +24,7 @@ function slider2022() {
     const slider = document.querySelector('[data-slides]')
 
     for (let i = 1; i < 14; i++) {
-    const imagelist = document.createElement('li')
+    const imagelist = document.createElement('div')
     imagelist.classList.add('slide')
     slider.append(imagelist)
 

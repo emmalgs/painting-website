@@ -76,6 +76,8 @@ ul li:hover ul.dropdown {
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
     gap: 2rem;
 }
 
@@ -85,23 +87,25 @@ ul li:hover ul.dropdown {
 }
 
 /* slideshow */
+
 .slideshow {
     height: 60vh;
     width: auto;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
 }
 
-.slideshow > ul {
-    padding: 0;
-    margin: 0;
+.slideshow > [data-slides] {
     list-style: none;
+    position: absolute;
+    grid-area: 1 / 2 / 2 / 3;
 }
 
 .slide {
-    position: absolute;
-    inset: 0;
     opacity: 0;
     width: 70vw;
+    position: absolute;
 }
 
 .slide > img {
@@ -114,12 +118,10 @@ ul li:hover ul.dropdown {
 }
 
 .slideshow-btn {
-    position: absolute;
     background: none;
     border: none;
     font-size: 3rem;
     cursor: pointer;
-    z-index: 2;
 }
 
 .slideshow-btn:hover,
@@ -127,10 +129,10 @@ ul li:hover ul.dropdown {
     color:blue;
 }
 
-.slideshow-btn.prev {
-    left: 1rem;
-}
-
-.slideshow-btn.next {
-    right: 1rem;
+.buttons {
+    padding: 0;
+    margin: 0;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
 }
