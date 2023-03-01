@@ -81,9 +81,11 @@ ul li:hover ul.dropdown {
     gap: 2rem;
 }
 
+/* thumbnails */
 .year-img {
     height: 5rem;
     width: auto;
+    align-items: space-evenly;
 }
 
 /* slideshow */

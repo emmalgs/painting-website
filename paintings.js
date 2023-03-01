@@ -21,6 +21,7 @@ function displayPaintings2022() {
 }
 displayPaintings2022()
 
+
 function slider2022() {
     const slider = document.querySelector('[data-slides]')
 
@@ -37,25 +38,29 @@ slider2022()
 let activeSlide = document.querySelector('[data-slides]').firstElementChild
 activeSlide.setAttribute('data-active', '')
 
+function thumbnailFocus() {
+    const activeSlides = document.querySelector("[data-active]")
+    const thumbnail = Array.from(document.querySelectorAll(".year-img"))
+    for (thumb of thumbnail) {
+        if (thumb.src == activeSlides.src) {
+            thumb.style.border = '2px solid blue'
+        } else {thumb.style.border = 'none'}
+    } 
+}
+
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         const offset = button.dataset.slideshowButton === 'next' ? 1 : -1
         const slides = button.closest('[data-slideshow').querySelector('[data-slides]')
-
         const activeSlides = slides.querySelector("[data-active]")
+
         let newIndex = [...slides.children].indexOf(activeSlides) + offset
         if (newIndex < 0) newIndex = slides.children.length - 1
         if (newIndex >= slides.children.length) newIndex = 0
-
+        thumbnailFocus()
         slides.children[newIndex].dataset.active = true
         delete activeSlides.dataset.active
-
-        // thumbnail focus
-        const thumbnail = Array.from(document.querySelectorAll(".year-img"))
-        for (thumb of thumbnail) {
-            if (thumb.src == activeSlides.src) {
-                thumb.style.border = '2px solid blue'
-            } 
-        }    
     })
 })
+
+
