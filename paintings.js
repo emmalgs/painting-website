@@ -11,6 +11,7 @@ function displayPaintings2022() {
     year.style.display = `flex`
     year.style.flexWrap = `wrap`
     year.style.gap =`1.2rem`
+
     for (let i = 1; i < 14; i++) {
         const PAINTING = document.createElement('img')
         PAINTING.src = Y2022 + `/${i}.jpg`
@@ -24,10 +25,6 @@ function slider2022() {
     const slider = document.querySelector('[data-slides]')
 
     for (let i = 1; i < 14; i++) {
-    // const imagelist = document.createElement('div')
-    // imagelist.classList.add('slide')
-    // slider.append(imagelist)
-
     const image = document.createElement('img')
     image.src = Y2022 + `/${i}.jpg`
     image.classList.add(`slide`)
@@ -35,8 +32,6 @@ function slider2022() {
     }
 }
 slider2022()
-
-
 
 // slideshow functionality
 let activeSlide = document.querySelector('[data-slides]').firstElementChild
@@ -54,5 +49,13 @@ buttons.forEach(button => {
 
         slides.children[newIndex].dataset.active = true
         delete activeSlides.dataset.active
+
+        // thumbnail focus
+        const thumbnail = Array.from(document.querySelectorAll(".year-img"))
+        for (thumb of thumbnail) {
+            if (thumb.src == activeSlides.src) {
+                thumb.style.border = '2px solid blue'
+            } 
+        }    
     })
 })
