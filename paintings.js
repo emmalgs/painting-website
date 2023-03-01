@@ -16,6 +16,9 @@ function displayPaintings2022() {
         const PAINTING = document.createElement('img')
         PAINTING.src = Y2022 + `/${i}.jpg`
         PAINTING.classList.add(`year-img`)
+        if (i == 1) {
+            PAINTING.style.border = '2px solid blue'
+        }
         year.appendChild(PAINTING)
     }
 }
@@ -42,10 +45,11 @@ function thumbnailFocus() {
     const activeSlides = document.querySelector("[data-active]")
     const thumbnail = Array.from(document.querySelectorAll(".year-img"))
     for (thumb of thumbnail) {
+        thumb.style.border = 'none'
         if (thumb.src == activeSlides.src) {
             thumb.style.border = '2px solid blue'
-        } else {thumb.style.border = 'none'}
     } 
+}
 }
 
 buttons.forEach(button => {
@@ -57,9 +61,10 @@ buttons.forEach(button => {
         let newIndex = [...slides.children].indexOf(activeSlides) + offset
         if (newIndex < 0) newIndex = slides.children.length - 1
         if (newIndex >= slides.children.length) newIndex = 0
-        thumbnailFocus()
+
         slides.children[newIndex].dataset.active = true
         delete activeSlides.dataset.active
+        thumbnailFocus()
     })
 })
 
